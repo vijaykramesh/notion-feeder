@@ -30,6 +30,7 @@ async function getNewFeedItemsFrom(feedUrl) {
     ...item,
     source: feedUrl.title,
   }));
+  return feedItems;
 }
 
 export default async function getNewFeedItems() {
