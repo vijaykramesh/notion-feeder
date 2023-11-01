@@ -47,7 +47,7 @@ export async function getFeedUrlsFromNotion() {
 }
 
 export async function addFeedItemToNotion(notionItem) {
-  const { title, link, content } = notionItem;
+  const { title, link, source, content } = notionItem;
 
   const notion = new Client({
     auth: NOTION_API_TOKEN,
@@ -72,6 +72,9 @@ export async function addFeedItemToNotion(notionItem) {
         Link: {
           url: link,
         },
+        Source: {
+          text: source,
+        }
       },
       children: content,
     });

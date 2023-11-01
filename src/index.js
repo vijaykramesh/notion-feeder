@@ -3,7 +3,7 @@ import {
   addFeedItemToNotion,
   deleteOldUnreadFeedItemsFromNotion,
 } from './notion';
-import htmlToNotionBlocks from './parser';
+import jsonToNotionBlocks from './parser';
 
 async function index() {
   const feedItems = await getNewFeedItems();
@@ -13,7 +13,8 @@ async function index() {
     const notionItem = {
       title: item.title,
       link: item.link,
-      content: htmlToNotionBlocks(item.content),
+      source: item.source,
+      content: jsonToNotionBlocks(item.content),
     };
     await addFeedItemToNotion(notionItem);
   }

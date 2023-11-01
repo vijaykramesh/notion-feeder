@@ -11,7 +11,7 @@ function htmlToMarkdownJSON(htmlContent) {
   }
 }
 
-function jsonToNotionBlocks(markdownContent) {
+export default function jsonToNotionBlocks(markdownContent) {
   return markdownToBlocks(markdownContent);
 }
 
