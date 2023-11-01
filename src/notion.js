@@ -73,8 +73,8 @@ export async function addFeedItemToNotion(notionItem) {
           url: link,
         },
         Source: {
-          text: source,
-        }
+          text: [ plain_text: source ],
+        },
       },
       children: content,
     });
